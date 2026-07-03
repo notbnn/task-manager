@@ -32,7 +32,7 @@ app.get("/tasks", async (req: any, res: any) => {
 app.post("/tasks", async (req: any, res: any) => {
     const { text } = req.body;
     if (!text) {
-        return res.status(400).json({ message: "Text is required" });
+        return res.status(400).json({ message: "La tarea debe tener un texto" });
     }
 
     try {
@@ -62,7 +62,7 @@ app.put("/tasks/:id", async (req: any, res: any) => {
         });
         res.json(updatedTask);
     } catch (error) {
-        res.status(404).json({ message: "Task not found" });
+        res.status(404).json({ message: "Tarea no encontrada" });
     }
 });
 
@@ -73,9 +73,9 @@ app.delete("/tasks/:id", async (req: any, res: any) => {
         await prisma.task.delete({
             where: { id: id }
         });
-        res.json({ message: "Task deleted successfully from PostgreSQL" });
+        res.json({ message: "Tarea eliminada exitosamente de PostgreSQL" });
     } catch (error) {
-        res.status(404).json({ message: "Task not found" });
+        res.status(404).json({ message: "Tarea no encontrada" });
     }
 });
 
