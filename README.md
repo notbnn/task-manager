@@ -64,7 +64,6 @@ Para inspeccionar de forma gráfica las tablas de usuarios y tareas impactadas d
     npx prisma studio
 
 
-
 ##Autor
 
     Desarrollador: Oscar Saavedra
