@@ -59,3 +59,4 @@ PostgreSQL con migraciones y seeds gestionados con Prisma (ver Módulo 2).
 ##  Autor
 **Desarrollador:** Oscar Saavedra  
 **Entorno de Desarrollo:** CachyOS Linux
+# prueba de protección 2
