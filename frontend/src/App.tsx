@@ -50,7 +50,7 @@ useEffect(() => {
   const addTask = async (text: string) => {
     if (!token) return;
     try {
-      const response = await fetch("http://localhost:3000/tasks", 
+      const response = await fetch("http://localhost:3000/tasks", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
