@@ -5,6 +5,7 @@ type TaskCardProps = {
     onToggleTaskComplete: (id: number) => void;
     onDeleteTask: (id: number) => void;
 };
+// este comentario es una prueba de documentación
 function TaskCard(props: TaskCardProps){
     return(
         <div className={`card ${props.completed ? 'completed' : ''}`}>
