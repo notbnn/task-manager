@@ -57,6 +57,6 @@ PostgreSQL con migraciones y seeds gestionados con Prisma (ver Módulo 2).
 * **Capa de Servidor (Backend):** Node.js, Express, TypeScript, JWT y Bcryptjs.
 
 ##  Autor
-**Desarrollador:** Oscar Saavedra  
+**Desarrollador:** Oscar Saavedra Lizarazu
 **Entorno de Desarrollo:** CachyOS Linux
-# prueba de protección 2
+
