@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
-    "lint": "echo 'skip lint'"
+    "lint": "echo 'skip lint'",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
