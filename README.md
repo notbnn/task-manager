@@ -2,7 +2,7 @@
 
 Aplicación web para la gestión cronológica de tareas y organización diaria, estructurada en un monorepo con cliente React y servidor Node.js.
 
-<!-- BADGE_CI -->
+[![CI](https://github.com/notbnn/task-manager/actions/workflows/ci.yml/badge.svg)](https://github.com/notbnn/task-manager/actions/workflows/ci.yml)
 
 ##  Instalación local
 
