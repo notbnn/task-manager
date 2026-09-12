@@ -1,9 +1,9 @@
+// TODO: verificación de pipeline para captura de laboratorio 1
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import TaskInput from "./components/TaskInput";
 import TaskList from "./components/TaskList";
 import Login from "./components/Login"; 
-import "./App.css";
 import { ClipboardList, Cat, LogOut } from 'lucide-react';
 
 type Task = {
