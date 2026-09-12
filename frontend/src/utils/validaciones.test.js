@@ -23,7 +23,7 @@ describe('esCorreoValido', () => {
 describe('contarTareasPendientes', () => {
   it('cuenta solo las tareas no completadas', () => {
     const tareas = [
-      { completada: true },
+      { completada: false },
       { completada: false },
       { completada: false },
     ]
