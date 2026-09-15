@@ -112,9 +112,15 @@ app.get("/tasks", async (req: any, res: any) => {
 
 app.post("/tasks", async (req: any, res: any) => {
     const { text } = req.body;
-    if (!text) return res.status(400).json({ message: "La tarea debe tener un texto" });
+    
+    // VALIDACIÓN DEL BUG 3:
+    if (!text) {
+        return res.status(400).json({ message: "La tarea debe tener un texto válido" });
+    }
 
     const authHeader = req.headers.authorization;
+    // ... el resto de tu código de autenticación y prisma ...
+    // ... el resto de tu código de autenticación y prisma.task.create
     if (!authHeader) {
         return res.status(401).json({ message: "No autorizado. Falta token." });
     }
@@ -164,6 +170,11 @@ app.delete("/tasks/:id", async (req: any, res: any) => {
     }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// Al final de tu index.ts:
+module.exports = app;
+
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
