@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 const app = express();
 const PORT = 3000;
 const prisma = new PrismaClient();
-const JWT_SECRET = "MICI_GUARDIAN_SUPER_SECRETO_123";
+const JWT_SECRET = process.env.JWT_SECRET || "MICI_GUARDIAN_SUPER_SECRETO_123";
 
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:5173" }));
