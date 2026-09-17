@@ -8,6 +8,7 @@ const app = express();
 const PORT = 3000;
 const prisma = new PrismaClient();
 const JWT_SECRET = process.env.JWT_SECRET || "MICI_GUARDIAN_SUPER_SECRETO_123";
+const apiKey = 'sk_test_FALSO123456789'  // TODO: mover a variable de entorno
 
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:5173" }));
