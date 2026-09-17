@@ -114,8 +114,8 @@ app.post("/tasks", async (req: any, res: any) => {
     const { text } = req.body;
     
     // VALIDACIÓN DEL BUG 3:
-    if (!text) {
-        return res.status(400).json({ message: "La tarea debe tener un texto válido" });
+    if (!text || !text.trim()) {
+      return res.status(400).json({ message: "La tarea debe tener un texto válido" });
     }
 
     const authHeader = req.headers.authorization;
