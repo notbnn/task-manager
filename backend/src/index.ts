@@ -177,7 +177,6 @@ app.delete("/tasks/:id", async (req: any, res: any) => {
 module.exports = app;
 
 if (process.env.NODE_ENV !== 'test') {
-  throw new Error('fallo simulado');
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
