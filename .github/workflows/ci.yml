@@ -194,4 +194,4 @@ jobs:
       - name: Desplegar a Railway (produccion)
         run: railway up --service task-manager --environment production
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN_PRODUCTION }}
