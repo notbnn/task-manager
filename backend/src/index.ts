@@ -17,6 +17,9 @@ app.get("/", (req: any, res: any) => {
   res.send("Hello World! Backend is working");
 });
 
+app.get("/health", (_req: any, res: any) => {
+  res.status(200).json({ status: "ok" });
+});
 
 app.post("/register", async (req: any, res: any) => {
   try {
@@ -174,6 +177,7 @@ app.delete("/tasks/:id", async (req: any, res: any) => {
 module.exports = app;
 
 if (process.env.NODE_ENV !== 'test') {
+  throw new Error('fallo simulado');
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
