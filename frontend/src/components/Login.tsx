@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_URL } from "../config";
 
 type LoginProps = {
   onLoginSuccess: (token: string) => void;
@@ -20,7 +21,7 @@ export default function Login({ onLoginSuccess }: LoginProps) {
     const endpoint = isRegister ? "register" : "login";
 
     try {
-      const response = await fetch(`http://localhost:3000/${endpoint}`, {
+      const response = await fetch(`${API_URL}/${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

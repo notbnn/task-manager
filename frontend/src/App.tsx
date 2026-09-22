@@ -5,6 +5,7 @@ import TaskList from "./components/TaskList";
 import Login from "./components/Login"; 
 import "./App.css";
 import { ClipboardList, Cat, LogOut } from 'lucide-react';
+import { API_URL } from "./config";
 
 type Task = {
   id: number;
@@ -22,7 +23,7 @@ useEffect(() => {
 
   const loadTasks = async () => {
     try {
-      const response = await fetch("http://localhost:3000/tasks", {
+      const response = await fetch(`${API_URL}/tasks`, {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`
@@ -50,7 +51,7 @@ useEffect(() => {
   const addTask = async (text: string) => {
     if (!token) return;
     try {
-      const response = await fetch("http://localhost:3000/tasks", {
+      const response = await fetch(`${API_URL}/tasks`, {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -69,7 +70,7 @@ useEffect(() => {
   // 3. BORRAR TAREA
   const deleteTask = async (id: number) => {
     try {
-      const response = await fetch(`http://localhost:3000/tasks/${id}`, { method: "DELETE" });
+      const response = await fetch(`${API_URL}/tasks/${id}`, { method: "DELETE" });
       if (!response.ok) throw new Error("Error al borrar");
       setTasks(tasks.filter(task => task.id !== id));
     } catch (error) {
@@ -83,7 +84,7 @@ useEffect(() => {
       const currentTask = tasks.find(task => task.id === id);
       if (!currentTask) return;
 
-      const response = await fetch(`http://localhost:3000/tasks/${id}`, {
+      const response = await fetch(`${API_URL}/tasks/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ completed: !currentTask.completed }),
