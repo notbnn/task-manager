@@ -14,7 +14,7 @@ app.use(cors({ origin: "http://localhost:5173" }));
 
 // --- BASE ---
 app.get("/", (req: any, res: any) => {
-  res.send("Hello World! Backend is working");
+  res.send("Task Manager API - pipeline verificado de punta a punta");
 });
 
 app.get("/health", (_req: any, res: any) => {
