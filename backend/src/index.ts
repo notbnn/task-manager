@@ -10,7 +10,12 @@ const prisma = new PrismaClient();
 const JWT_SECRET = process.env.JWT_SECRET || "MICI_GUARDIAN_SUPER_SECRETO_123";
 
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://task-manager-production-e558.up.railway.app",
+  ],
+}));
 
 // --- BASE ---
 app.get("/", (req: any, res: any) => {
